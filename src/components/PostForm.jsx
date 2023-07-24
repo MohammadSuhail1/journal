@@ -22,14 +22,17 @@ const PostForm = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:4000/api/posts", {
-        method: "POST",
-        body: JSON.stringify(post),
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${user.token}`,
-        },
-      });
+      const response = await fetch(
+        "https://journal-api-imrk.onrender.com/api/posts",
+        {
+          method: "POST",
+          body: JSON.stringify(post),
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
 
       const body = await response.text();
       const newPost = JSON.parse(body);

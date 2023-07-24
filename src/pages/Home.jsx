@@ -12,11 +12,14 @@ const Home = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch("http://localhost:4000/api/posts", {
-        headers: {
-          Authorization: `Bearer ${user.token}`,
-        },
-      });
+      const response = await fetch(
+        "https://journal-api-imrk.onrender.com/api/posts",
+        {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
       const json = await response.json();
 
       if (response.ok) dispatch({ type: "SET_POSTS", payload: json });
