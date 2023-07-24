@@ -18,7 +18,7 @@ const NavBar = () => {
         </ul>
       </nav>
 
-      <span> The Journal App </span>
+      <span> Reflective - The Journal App </span>
 
       {user ? (
         <div>

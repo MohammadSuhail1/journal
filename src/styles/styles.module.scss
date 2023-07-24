@@ -46,13 +46,14 @@
 
 .postForm {
   width: 80%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   margin: auto;
 
   & > div {
     margin: 0 auto 10px auto;
-    color: rgb(250, 0, 255);
+    color: #e66465;
   }
 
   & > input {
@@ -87,7 +88,7 @@
 }
 
 .loginForm {
-  width: 500px;
+  width: 450px;
   display: flex;
   flex-direction: column;
   margin: auto;

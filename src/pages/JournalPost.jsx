@@ -11,14 +11,11 @@ const JournalPost = () => {
 
   useEffect(() => {
     const fetchPost = async () => {
-      const response = await fetch(
-        `https://diary-api-nbqk.onrender.com/api/posts/${id}`,
-        {
-          headers: {
-            Authorization: `Bearer ${user.token}`,
-          },
-        }
-      );
+      const response = await fetch(`http://localhost:4000/api/posts/${id}`, {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
 
       const json = await response.json();
       if (response.ok) setPost(json);

@@ -22,17 +22,14 @@ const PostForm = () => {
     };
 
     try {
-      const response = await fetch(
-        "https://diary-api-nbqk.onrender.com/api/posts",
-        {
-          method: "POST",
-          body: JSON.stringify(post),
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${user.token}`,
-          },
-        }
-      );
+      const response = await fetch("http://localhost:4000/api/posts", {
+        method: "POST",
+        body: JSON.stringify(post),
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
 
       const body = await response.text();
       const newPost = JSON.parse(body);
@@ -53,7 +50,7 @@ const PostForm = () => {
     <>
       <form className={styles.postForm} onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <h3> Create a post </h3>
+          <h3> Write a journal </h3>
         </div>
         <input
           type="text"
